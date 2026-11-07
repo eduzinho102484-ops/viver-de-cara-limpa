@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import WhatsAppButton from "./WhatsAppButton.jsx";
 import Reveal from "./Reveal.jsx";
 import MeteorField from "./MeteorField.jsx";
@@ -14,9 +15,10 @@ export default function Hero() {
           <p className="hero-manifesto">Todo recomeço merece acolhimento.</p>
           <h1 aria-label={heroTitle}>
             {heroTitle.split(" ").map((word, index, words) => (
-              <span className="hero-word" aria-hidden="true" key={`${word}-${index}`}>
-                {word}{index < words.length - 1 ? " " : ""}
-              </span>
+              <Fragment key={`${word}-${index}`}>
+                <span className="hero-word" aria-hidden="true">{word}</span>
+                {index < words.length - 1 ? " " : null}
+              </Fragment>
             ))}
           </h1>
           <p className="lead">
