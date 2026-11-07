@@ -10,7 +10,7 @@ export default function Services() {
           <p className="eyebrow">Como podemos ajudar?</p>
           <h2>Informação e orientação para cada situação</h2>
         </Reveal>
-        <Reveal className="card-grid stagger-children">
+        <Reveal className="card-grid services-grid stagger-children">
           {services.map((s) => (
             <article key={s.title} className="card">
               <span className="card-icon">

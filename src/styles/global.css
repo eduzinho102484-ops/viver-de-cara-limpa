@@ -710,7 +710,14 @@ body { background: var(--white); }
   .hero h1 { font-size: clamp(2.8rem, 14vw, 4rem); }
   .hero-photo { min-height: 74vw; }
   .btn-row .btn { width: 100%; }
-  .card { border-right: 0; padding-inline: 0; }
+  .card { border-right: 0; padding: 1.2rem; }
+  .services-grid { grid-auto-rows: 1fr; gap: .85rem; }
+  .services-grid .card { height: 100%; }
+  .card, .step { -webkit-backdrop-filter: blur(4px) saturate(112%); backdrop-filter: blur(4px) saturate(112%); box-shadow: 0 7px 18px rgba(24,59,48,.07), inset 0 1px 0 rgba(255,255,255,.72); }
+  .meteor:nth-child(n+7) { display: none; }
+  .meteor { box-shadow: 0 0 7px 2px rgba(241,210,145,.7); }
+  .meteor::after { width: 30px; }
+  .stagger-children.is-visible > * { animation-duration: 420ms; }
   .floating-whatsapp { width: 54px; height: 54px; right: .8rem; bottom: .8rem; }
 }
 @media (prefers-reduced-motion: reduce) {
