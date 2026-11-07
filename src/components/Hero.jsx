@@ -1,11 +1,13 @@
 import WhatsAppButton from "./WhatsAppButton.jsx";
 import Reveal from "./Reveal.jsx";
+import MeteorField from "./MeteorField.jsx";
 
 const heroTitle = "Um novo caminho começa com o primeiro passo.";
 
 export default function Hero() {
   return (
     <section id="inicio" className="hero">
+      <MeteorField />
       <div className="container hero-grid">
         <Reveal className="hero-copy">
           <p className="eyebrow">Acolhimento, informação e orientação</p>

@@ -2,12 +2,14 @@ import { Logo, navLinks } from "./Logo.jsx";
 import PrivacyPolicy from "./PrivacyPolicy.jsx";
 import { config, phoneHref } from "../config.js";
 import Reveal from "./Reveal.jsx";
+import MeteorField from "./MeteorField.jsx";
 
 export default function Footer() {
   const tel = phoneHref();
 
   return (
     <footer className="footer">
+      <MeteorField />
       <Reveal className="container footer-grid">
         <div>
           <Logo light />

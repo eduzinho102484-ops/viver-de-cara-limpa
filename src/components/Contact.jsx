@@ -1,12 +1,14 @@
 import WhatsAppButton from "./WhatsAppButton.jsx";
 import { config, phoneHref } from "../config.js";
 import Reveal from "./Reveal.jsx";
+import MeteorField from "./MeteorField.jsx";
 
 export default function Contact() {
   const tel = phoneHref();
 
   return (
     <section id="contato" className="section section-dark">
+      <MeteorField />
       <Reveal className="container narrow center">
         <p className="eyebrow">Contato</p>
         <h2>Converse com a nossa equipe</h2>
