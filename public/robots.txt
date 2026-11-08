@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://viverdecaralimpa.com.br/sitemap.xml

@@ -47,7 +47,9 @@ src/
 ## Antes de publicar
 
 - Preencher o `.env` com o número oficial de WhatsApp.
-- Definir domínio, número de WhatsApp e dados oficiais do controlador nas variáveis de ambiente da hospedagem.
+- Confirmar o domínio público definitivo. O padrão preparado no projeto é `https://viverdecaralimpa.com.br`; se o domínio escolhido for outro, atualizar `VITE_SITE_URL` no `.env` local e nas variáveis de ambiente do Netlify.
+- Cadastrar o domínio no Netlify e configurar os registros DNS conforme os valores apresentados pelo próprio Netlify; o código não configura DNS nem compra o domínio.
+- O comando `npm run build` gera `sitemap.xml` e `robots.txt` para o domínio definido em `VITE_SITE_URL`.
 - **Revisar a política de privacidade** (`PrivacyPolicy.jsx`) com um profissional jurídico e confirmar finalidades, compartilhamentos e prazos de retenção com o controlador.
 - Validar os textos informativos com responsável técnico da área da saúde.
 - Incluir foto real e autorizada das clínicas quando forem cadastradas.

@@ -1,21 +1,9 @@
-import { useEffect } from "react";
 import { Logo } from "./Logo.jsx";
 import WhatsAppButton from "./WhatsAppButton.jsx";
 import Reveal from "./Reveal.jsx";
 import FloatingWhatsApp from "./FloatingWhatsApp.jsx";
 
 export default function SubstanceArticlePage({ article }) {
-  useEffect(() => {
-    document.title = `${article.name}: informação e apoio | Viver de Cara Limpa`;
-    let meta = document.querySelector('meta[name="description"]');
-    if (!meta) {
-      meta = document.createElement("meta");
-      meta.name = "description";
-      document.head.appendChild(meta);
-    }
-    meta.content = article.metaDescription;
-  }, [article]);
-
   return (
     <div className="substance-page">
       <a className="skip-link" href="#conteudo">Ir para o conteúdo</a>

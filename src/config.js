@@ -12,7 +12,8 @@ export const config = {
   privacyController: (env.VITE_PRIVACY_CONTROLLER || "").trim(),
   privacyEmail: (env.VITE_PRIVACY_EMAIL || env.VITE_EMAIL || "").trim(),
   address: (env.VITE_ADDRESS || "").trim(),
-  siteUrl: (env.VITE_SITE_URL || "").trim().replace(/\/$/, ""),
+  // Padrão do domínio de produção; VITE_SITE_URL permite trocar pelo endereço confirmado.
+  siteUrl: (env.VITE_SITE_URL || "https://viverdecaralimpa.com.br").trim().replace(/\/$/, ""),
 };
 
 // Link universal: funciona no celular (abre o app) e no computador (WhatsApp Web/Desktop).
