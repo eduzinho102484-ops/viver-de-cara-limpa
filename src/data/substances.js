@@ -7,7 +7,8 @@ export const substancePages = {
   cocaine: {
     slug: "/dependencia-de-cocaina",
     name: "Dependência de cocaína",
-    metaDescription: "Informações sobre dependência de cocaína, sinais possíveis e caminhos para buscar orientação e cuidado.",
+    seoTitle: "Dependência de cocaína: sinais e tratamento | Viver de Cara Limpa",
+    metaDescription: "Entenda sinais possíveis da dependência de cocaína e veja como buscar orientação, tratamento especializado e apoio para familiares.",
     heroLead: "Entender o que está acontecendo pode ajudar a dar o próximo passo. Buscar apoio não precisa ser uma decisão solitária.",
     image: "https://images.unsplash.com/photo-1645066928295-2506defde470?auto=format&fit=crop&w=1000&q=80",
     imageAlt: "Profissional de saúde em retrato",
@@ -39,7 +40,8 @@ export const substancePages = {
   crack: {
     slug: "/dependencia-de-crack",
     name: "Dependência de crack",
-    metaDescription: "Informações sobre dependência de crack, sinais possíveis e caminhos para buscar orientação e cuidado.",
+    seoTitle: "Dependência de crack: sinais e cuidado | Viver de Cara Limpa",
+    metaDescription: "Conheça sinais possíveis da dependência de crack e saiba como buscar orientação, opções de cuidado e apoio para familiares.",
     heroLead: "O uso de crack pode trazer impactos importantes para a saúde e o cotidiano. Informação e acolhimento podem ajudar a buscar apoio sem julgamento.",
     image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1000&q=80",
     imageAlt: "Profissional de saúde em conversa, imagem de banco de imagens",
@@ -71,7 +73,8 @@ export const substancePages = {
   cannabis: {
     slug: "/dependencia-de-maconha",
     name: "Dependência de maconha",
-    metaDescription: "Informações sobre uso problemático de maconha, sinais possíveis e caminhos para buscar orientação e cuidado.",
+    seoTitle: "Dependência de maconha: sinais e ajuda | Viver de Cara Limpa",
+    metaDescription: "Informações sobre uso problemático de maconha, sinais possíveis e opções de cuidado. Saiba como buscar orientação para você ou alguém próximo.",
     heroLead: "Quando o consumo começa a ocupar espaço demais na rotina, buscar informação e conversar com um profissional pode ser um primeiro passo.",
     image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=1000&q=80",
     imageAlt: "Médico usando roupa clínica e estetoscópio",
@@ -104,7 +107,8 @@ export const substancePages = {
   alcohol: {
     slug: "/dependencia-de-alcool",
     name: "Dependência de álcool",
-    metaDescription: "Informações sobre dependência de álcool, sinais possíveis, abstinência e caminhos de cuidado.",
+    seoTitle: "Dependência de álcool: sinais e tratamento | Viver de Cara Limpa",
+    metaDescription: "Conheça sinais da dependência de álcool, riscos da abstinência e caminhos para buscar tratamento e apoio profissional.",
     heroLead: "Quando fica difícil controlar o consumo, buscar apoio profissional pode ajudar a entender os próximos passos com segurança e sem julgamento.",
     image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=1000&q=80",
     imageAlt: "Profissional de saúde em ambiente clínico",
@@ -142,7 +146,8 @@ export const substancePages = {
   medication: {
     slug: "/dependencia-de-medicamentos",
     name: "Dependência de medicamentos",
-    metaDescription: "Informações sobre dependência e uso problemático de medicamentos, sinais possíveis e como buscar orientação profissional.",
+    seoTitle: "Dependência de medicamentos: sinais e cuidado | Viver de Cara Limpa",
+    metaDescription: "Saiba reconhecer sinais de uso problemático de medicamentos e como buscar avaliação profissional sem interromper a medicação por conta própria.",
     heroLead: "Quando o uso de um medicamento começa a sair do combinado ou fica difícil de controlar, uma conversa com um profissional pode ajudar a avaliar o que está acontecendo com segurança.",
     image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=1000&q=80",
     imageAlt: "Profissional de saúde em jaleco, em retrato clínico",

@@ -10,8 +10,8 @@ import { substancePages } from "./data/substances.js";
 import { setPageSeo } from "./seo.js";
 
 const defaultSeo = {
-  title: "Viver de Cara Limpa | Orientação e acolhimento",
-  description: "Informação, acolhimento e orientação para pessoas e familiares que buscam apoio relacionado ao uso de álcool e outras drogas.",
+  title: "Ajuda para Dependência Química | Viver de Cara Limpa",
+  description: "Orientação acolhedora para quem enfrenta problemas com álcool e outras drogas. Conheça possibilidades de cuidado e apoio para familiares.",
 };
 
 export default function App() {
@@ -19,13 +19,13 @@ export default function App() {
   useEffect(() => {
     const article = Object.values(substancePages).find((item) => item.slug === path);
     if (article) {
-      setPageSeo({ title: `${article.name} | Viver de Cara Limpa`, description: article.metaDescription, path });
+      setPageSeo({ title: article.seoTitle, description: article.metaDescription, path });
       return;
     }
     setPageSeo({
-      title: path === "/site" ? "Conheça o trabalho | Viver de Cara Limpa" : defaultSeo.title,
+      title: path === "/site" ? "Orientação sobre Tratamento e Clínicas | Viver de Cara Limpa" : defaultSeo.title,
       description: path === "/site"
-        ? "Conheça o trabalho do Viver de Cara Limpa e encontre informações sobre acolhimento, orientação e possibilidades de apoio."
+        ? "Entenda como buscar tratamento para dependência química, conhecer possibilidades de acolhimento e encontrar apoio para você ou sua família."
         : defaultSeo.description,
       path,
     });

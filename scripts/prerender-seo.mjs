@@ -14,17 +14,17 @@ const siteUrl = (process.env.VITE_SITE_URL || localSiteUrl || "https://viverdeca
 const pages = [
   {
     path: "/",
-    title: "Viver de Cara Limpa | Orientação e acolhimento",
-    description: "Informação, acolhimento e orientação para pessoas e familiares que buscam apoio relacionado ao uso de álcool e outras drogas.",
+    title: "Ajuda para Dependência Química | Viver de Cara Limpa",
+    description: "Orientação acolhedora para quem enfrenta problemas com álcool e outras drogas. Conheça possibilidades de cuidado e apoio para familiares.",
   },
   {
     path: "/site",
-    title: "Conheça o trabalho | Viver de Cara Limpa",
-    description: "Conheça o trabalho do Viver de Cara Limpa e encontre informações sobre acolhimento, orientação e possibilidades de apoio.",
+    title: "Orientação sobre Tratamento e Clínicas | Viver de Cara Limpa",
+    description: "Entenda como buscar tratamento para dependência química, conhecer possibilidades de acolhimento e encontrar apoio para você ou sua família.",
   },
   ...Object.values(substancePages).map((page) => ({
     path: page.slug,
-    title: `${page.name} | Viver de Cara Limpa`,
+    title: page.seoTitle,
     description: page.metaDescription,
   })),
 ];
