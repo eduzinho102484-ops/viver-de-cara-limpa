@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Logo } from "./Logo.jsx";
 import Icon from "./Icon.jsx";
+import Reveal from "./Reveal.jsx";
 import { config, whatsappUrl } from "../config.js";
 
 const actions = [
@@ -67,9 +68,16 @@ export default function LinkHub() {
             ))}
           </div>
         </div>
-        <p className="link-hub-eyebrow">Viver de Cara Limpa</p>
-        <h1 id="hub-title">Acesso simples e acolhedor</h1>
-        <p className="link-hub-intro">Orientação, respeito e novas possibilidades. Encontrar apoio pode ser o primeiro passo para uma nova história.</p>
+        <div className="link-hub-topic-links">
+          <a className="link-hub-topic-more" href="/dependencia-de-cocaina">Dependência de cocaína <span aria-hidden="true">↗</span></a>
+          <a className="link-hub-topic-more" href="/dependencia-de-crack">Dependência de crack <span aria-hidden="true">↗</span></a>
+          <a className="link-hub-topic-more" href="/dependencia-de-maconha">Dependência de maconha <span aria-hidden="true">↗</span></a>
+          <a className="link-hub-topic-more" href="/dependencia-de-alcool">Dependência de álcool <span aria-hidden="true">↗</span></a>
+          <a className="link-hub-topic-more" href="/dependencia-de-medicamentos">Dependência de medicamentos <span aria-hidden="true">↗</span></a>
+        </div>
+        <Reveal as="p" className="link-hub-eyebrow hub-drop" style={{ transitionDelay: "40ms" }}>Viver de Cara Limpa</Reveal>
+        <Reveal as="h1" id="hub-title" className="hub-drop" style={{ transitionDelay: "130ms" }}>Acesso simples e acolhedor</Reveal>
+        <Reveal as="p" className="link-hub-intro hub-drop" style={{ transitionDelay: "220ms" }}>Orientação, respeito e novas possibilidades. Encontrar apoio pode ser o primeiro passo para uma nova história.</Reveal>
         <div className="link-hub-actions">
           {actions.map((action) => (
             <a key={action.label} className="hub-action" href={whatsappUrl(action.message)} target="_blank" rel="noopener noreferrer">

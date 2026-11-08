@@ -11,3 +11,28 @@
   from = "/site"
   to = "/index.html"
   status = 200
+
+[[redirects]]
+  from = "/dependencia-de-cocaina"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/dependencia-de-crack"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/dependencia-de-maconha"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/dependencia-de-alcool"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/dependencia-de-medicamentos"
+  to = "/index.html"
+  status = 200
