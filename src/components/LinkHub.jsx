@@ -13,7 +13,7 @@ const actions = [
 
 const topics = [
   {
-    title: "Dependência de álcool",
+    title: "Dependência de álcool, drogas e saúde mental",
     description: "Quando o consumo traz dificuldades, informação e apoio respeitoso podem ajudar a explorar possibilidades de cuidado.",
     src: "https://images.unsplash.com/photo-1645066928295-2506defde470?auto=format&fit=crop&w=1100&q=82",
     alt: "Médico usando jaleco e estetoscópio",
