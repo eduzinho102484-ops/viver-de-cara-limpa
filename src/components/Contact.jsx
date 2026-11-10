@@ -1,40 +1,60 @@
-import WhatsAppButton from "./WhatsAppButton.jsx";
-import { config, phoneHref } from "../config.js";
-import Reveal from "./Reveal.jsx";
-import MeteorField from "./MeteorField.jsx";
+import { Github, Instagram, Mail } from 'lucide-react'
+import { siteConfig } from '../data/config.js'
+import { hasWhatsApp } from '../utils/whatsapp.js'
+import WhatsAppButton from './WhatsAppButton.jsx'
+import Reveal from './Reveal.jsx'
 
 export default function Contact() {
-  const tel = phoneHref();
+  const { githubUrl, instagramUrl, email } = siteConfig
 
   return (
-    <section id="contato" className="section section-dark">
-      <MeteorField />
-      <Reveal className="container narrow center">
-        <p className="eyebrow">Contato</p>
-        <h2>Converse com a nossa equipe</h2>
-        <p className="lead">
-          Você não precisa dar esse passo sozinho. Fale conosco e receba orientação com respeito e sigilo no
-          tratamento das suas informações.
-        </p>
-        <WhatsAppButton variant="light" className="btn-lg" />
-        <ul className="contact-list">
-          {config.phoneDisplay && (
-            <li>
-              <strong>Telefone:</strong> {tel ? <a href={tel}>{config.phoneDisplay}</a> : config.phoneDisplay}
-            </li>
+    <section id="contato" className="section contact" aria-labelledby="contact-title">
+      <div className="container narrow contact__inner">
+        <Reveal>
+          <h2 id="contact-title" className="section__title">
+            Vamos tirar sua ideia do papel?
+          </h2>
+          <p className="section__lead">
+            Tem um projeto em mente? Entre em contato para conversarmos. Orçamento grátis e sem
+            compromisso.
+          </p>
+          <div className="contact__actions">
+            <WhatsAppButton>Falar no WhatsApp</WhatsAppButton>
+          </div>
+
+          {!hasWhatsApp() && import.meta.env.DEV && (
+            <p className="dev-note">
+              Aviso (só aparece no modo de desenvolvimento): configure o número em src/data/config.js.
+            </p>
           )}
-          {config.email && (
-            <li>
-              <strong>E-mail:</strong> <a href={`mailto:${config.email}`}>{config.email}</a>
-            </li>
+
+          {(githubUrl || instagramUrl || email) && (
+            <ul className="socials" aria-label="Outros contatos">
+              {githubUrl && (
+                <li>
+                  <a href={githubUrl} target="_blank" rel="noopener noreferrer">
+                    <Github size={18} aria-hidden="true" /> GitHub
+                  </a>
+                </li>
+              )}
+              {instagramUrl && (
+                <li>
+                  <a href={instagramUrl} target="_blank" rel="noopener noreferrer">
+                    <Instagram size={18} aria-hidden="true" /> Instagram
+                  </a>
+                </li>
+              )}
+              {email && (
+                <li>
+                  <a href={`mailto:${email}`}>
+                    <Mail size={18} aria-hidden="true" /> {email}
+                  </a>
+                </li>
+              )}
+            </ul>
           )}
-          {config.address && (
-            <li>
-              <strong>Localização:</strong> {config.address}
-            </li>
-          )}
-        </ul>
-      </Reveal>
+        </Reveal>
+      </div>
     </section>
-  );
+  )
 }

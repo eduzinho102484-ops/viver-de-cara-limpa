@@ -1,24 +1,18 @@
-import Icon from "./Icon.jsx";
-import { whatsappUrl } from "../config.js";
+import { MessageCircle } from 'lucide-react'
+import { getWhatsAppUrl, hasWhatsApp } from '../utils/whatsapp.js'
 
-export default function WhatsAppButton({
-  children = "Fale conosco pelo WhatsApp",
-  message,
-  variant = "primary",
-  className = "",
-}) {
-  const url = whatsappUrl(message);
-  if (!url) return null; // sem número oficial configurado, o botão não aparece
+export default function WhatsAppButton({ children, variant = 'primary', message, className = '' }) {
+  const href = getWhatsAppUrl(message)
+  const external = hasWhatsApp()
 
   return (
     <a
-      className={`btn btn-${variant} ${className}`.trim()}
-      href={url}
-      target="_blank"
-      rel="noopener noreferrer"
+      className={`btn btn--${variant} ${className}`}
+      href={href}
+      {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
     >
-      <Icon name="whatsapp" size={20} fill="currentColor" stroke="none" />
+      <MessageCircle size={18} aria-hidden="true" />
       {children}
     </a>
-  );
+  )
 }

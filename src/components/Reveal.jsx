@@ -1,56 +1,24 @@
-import { useEffect, useRef } from "react";
+import { motion, useReducedMotion } from 'framer-motion'
 
-let observer;
+// Entrada suave ao rolar. Anima só opacity/transform e respeita
+// a preferência "reduzir movimento" do sistema.
+export default function Reveal({ children, delay = 0, className = '', as = 'div' }) {
+  const reduce = useReducedMotion()
+  const Tag = motion[as] || motion.div
 
-function getObserver() {
-  if (observer || typeof IntersectionObserver === "undefined") return observer;
-
-  observer = new IntersectionObserver(
-    (entries) => {
-      for (const entry of entries) {
-        if (!entry.isIntersecting) continue;
-        entry.target.classList.add("is-visible");
-        observer.unobserve(entry.target);
-      }
-    },
-    { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
-  );
-  return observer;
-}
-
-export default function Reveal({ as: Element = "div", className = "", children, ...props }) {
-  const ref = useRef(null);
-
-  useEffect(() => {
-    const node = ref.current;
-    if (!node) return undefined;
-
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      node.classList.add("is-visible");
-      return undefined;
-    }
-
-    const sharedObserver = getObserver();
-    if (!sharedObserver) {
-      node.classList.add("is-visible");
-      return undefined;
-    }
-
-    document.body.dataset.motionReady = "true";
-    sharedObserver.observe(node);
-
-    return () => {
-      sharedObserver.unobserve(node);
-    };
-  }, []);
+  if (reduce) {
+    return <Tag className={className}>{children}</Tag>
+  }
 
   return (
-    <Element
-      {...props}
-      ref={ref}
-      className={`motion-reveal ${className}`.trim()}
+    <Tag
+      className={className}
+      initial={{ opacity: 0, y: 18 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-60px' }}
+      transition={{ duration: 0.5, delay, ease: 'easeOut' }}
     >
       {children}
-    </Element>
-  );
+    </Tag>
+  )
 }

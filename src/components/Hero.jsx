@@ -1,52 +1,52 @@
-import { Fragment } from "react";
-import WhatsAppButton from "./WhatsAppButton.jsx";
-import Reveal from "./Reveal.jsx";
-import MeteorField from "./MeteorField.jsx";
-
-const heroTitle = "Um novo caminho começa com o primeiro passo.";
+import { ArrowRight } from 'lucide-react'
+import WhatsAppButton from './WhatsAppButton.jsx'
+import Reveal from './Reveal.jsx'
 
 export default function Hero() {
   return (
-    <section id="inicio" className="hero">
-      <MeteorField />
-      <div className="container hero-grid">
-        <Reveal className="hero-copy">
-          <p className="eyebrow">Acolhimento, informação e orientação</p>
-          <p className="hero-manifesto">Todo recomeço merece acolhimento.</p>
-          <h1 aria-label={heroTitle}>
-            {heroTitle.split(" ").map((word, index, words) => (
-              <Fragment key={`${word}-${index}`}>
-                <span className="hero-word" aria-hidden="true">{word}</span>
-                {index < words.length - 1 ? " " : null}
-              </Fragment>
-            ))}
+    <section id="inicio" className="hero" aria-labelledby="hero-title">
+      <div className="hero__glow" aria-hidden="true" />
+      <div className="container hero__grid">
+        <Reveal className="hero__text">
+          <p className="eyebrow">Sites para o seu comércio</p>
+          <h1 id="hero-title" className="hero__title">
+            Seu comércio ainda não aparece <span className="gradient-text">no Google?</span>
           </h1>
-          <p className="lead">
-            Conheça possibilidades de acolhimento, orientação e acompanhamento especializado para pessoas que buscam
-            apoio na recuperação da dependência de álcool e outras drogas.
+          <p className="hero__subtitle">
+            Crio o site do seu comércio e coloco no ar. Design sob medida, rápido no celular e pronto
+            pra receber pedidos pelo WhatsApp.
           </p>
-          <div className="btn-row">
-            <WhatsAppButton className="btn-lg" />
-            <a className="btn btn-secondary btn-lg" href="#sobre">
-              Conheça nosso trabalho
+          <div className="hero__actions">
+            <WhatsAppButton>Quero meu site no ar</WhatsAppButton>
+            <a className="btn btn--ghost" href="#projetos">
+              Explorar projetos
+              <ArrowRight size={18} aria-hidden="true" />
             </a>
           </div>
+          <p className="hero__note">Orçamento grátis • Entrega em 7 a 14 dias • A partir de R$ 200</p>
         </Reveal>
-        <Reveal className="hero-photo" delay={120}>
-          <img
-            className="hero-photo-image"
-            src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1200&q=80"
-            srcSet="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=768&q=75 768w, https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1200&q=80 1200w, https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1800&q=82 1800w"
-            sizes="(max-width: 899px) 100vw, 50vw"
-            alt="Luz suave da manhã sobre uma paisagem verde tranquila"
-            width="1800"
-            height="1200"
-            fetchPriority="high"
-            decoding="async"
-          />
-          <span className="hero-photo-caption">Um espaço para escutar, orientar e encontrar possibilidades.</span>
+
+        <Reveal className="hero__visual" delay={0.1}>
+          <div className="code-card" aria-hidden="true">
+            <div className="code-card__bar">
+              <span /><span /><span />
+              <em>seu-negocio.com</em>
+            </div>
+            <pre className="code-card__body">
+{`<header>
+  <h1>Seu Negócio</h1>
+  <a href="wa.me/…">
+    Pedir pelo WhatsApp
+  </a>
+</header>
+
+<section id="cardapio">
+  …
+</section>`}
+            </pre>
+          </div>
         </Reveal>
       </div>
     </section>
-  );
+  )
 }
